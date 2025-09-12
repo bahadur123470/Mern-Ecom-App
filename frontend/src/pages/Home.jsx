@@ -4,6 +4,7 @@ import LatestCollection from '../components/LatestCollection.jsx'
 import BestSeller from '../components/BestSeller.jsx'
 import OurPolicy from '../components/OurPolicy.jsx'
 import NewsletterBox from '../components/NewsletterBox.jsx'
+import Collection from './Collection.jsx'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero/>
       <LatestCollection/>
       <BestSeller/>
+      <Collection/>
       <OurPolicy/>
       <NewsletterBox/>
     </div>
