@@ -1,0 +1,9 @@
+import 'dotenv/config'
+
+export const ENV = {
+    PORT: process.env.PORT || 4000,
+    MONGODB_URI: process.env.MONGODB_URI,
+    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+    CLOUDINARY_SECRET_KEY: process.env.CLOUDINARY_SECRET_KEY,
+    CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+}
