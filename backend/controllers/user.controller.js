@@ -10,7 +10,38 @@ export const createToken = (id) => {
 }
 
 export const loginUser = async (req, res) => {
-    res.json({msg:"Login Api working"})
+    try {
+        const { email, password } = req.body;
+        const user = await User.findOne({email});
+        //  user  existence  ( check )
+        if (!user) {
+            return res.json({
+                success: false,
+                message: "User doesn't exists",
+            })
+        }
+        //  Password match check as prev 
+        const isMatch = await bcrypt.compare(password,user.password)
+        if (isMatch){
+            const token = createToken(user._id)
+            res.json({
+                success: true,
+                token
+            })
+        }
+        else {
+            res.json({
+                success: false,
+                message: "Invalid Credentials"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
 
 }
 
