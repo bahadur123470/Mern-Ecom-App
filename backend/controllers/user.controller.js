@@ -96,6 +96,26 @@ export const registerUser = async (req, res) => {
 }
 
 export const adminLogin = async (req, res) => {
-    res.json({msg:"Admin Api working"})
-
+    try {
+        const { email, password } = req.body;
+        if( email === ENV.ADMIN_EMAIL && password === ENV.ADMIN_PASSWORD){
+            const token = jwt.sign(email+password, ENV.JWT_SECRET)
+            res.json({
+                success: true,
+                token
+            })
+        }
+        else {
+            res.json({
+                success: false,
+                message: "Invalid Credentials"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
 }
