@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import { ENV } from '../config/env.js'
 
 export const authUser = (req, res, next) => {
-    const { token } = req.body;
+    const { token } = req.headers;
     if(!token){
         return res.json({
             success: false,
