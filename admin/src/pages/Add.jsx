@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets.js'
 import axios from 'axios';
-import { backendURL } from '../App';
+import { backendUrl } from '../App';
 import { toast } from 'react-toastify';
 
 const Add = ({token}) => {
@@ -37,7 +37,7 @@ const Add = ({token}) => {
             formData.append('bestseller', bestseller)
             formData.append('sizes', JSON.stringify(sizes))
 
-            const response = await axios.post(backendURL + "/api/product/add", formData, {headers: {token}})
+            const response = await axios.post(backendUrl + "/api/product/add", formData, {headers: {token}})
             if(response.data.success){
                 toast.success(response.data.message)
                 setImage1(false)
