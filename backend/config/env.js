@@ -8,5 +8,6 @@ export const ENV = {
     CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
     JWT_SECRET: process.env.JWT_SECRET,
     ADMIN_EMAIL: process.env.ADMIN_EMAIL,
-    ADMIN_PASSWORD: process.env.ADMIN_PASSWORD
+    ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY
 }
