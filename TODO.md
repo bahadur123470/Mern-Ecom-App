@@ -1,4 +1,10 @@
 - [x] Update backend/vercel.json to use "functions" instead of "builds" for Vercel v3 config
-- [x] Update cloudinary version in backend/package.json to ^2.4.0 (attempted; installs 2.7.0 in simulation, 'q' warning persists as transitive dep)
-- [x] Run npm install in backend to update dependencies
-- [x] Verify the fixes by checking for warnings in next deployment (recommend redeploy to Vercel; 'q' deprecation ignorable/non-breaking)
+- [x] Run npm install in frontend
+- [x] Run npm install in backend
+- [x] Run npm install in admin
+- [x] Run npm run lint in frontend
+- [x] Run npm run lint in admin
+- [x] Run npm run build in frontend
+- [x] Run npm run build in admin
+- [x] Check backend server.js for syntax errors
+- [x] Verify all checks pass for Vercel deployment

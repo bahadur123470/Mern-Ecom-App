@@ -69,10 +69,12 @@ const Collection = () => {
     }
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=> {
     applyFilter();
   },[category, subCategory, search, showSearch, products])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=> {
     sortProducts();
   }, [sortType])

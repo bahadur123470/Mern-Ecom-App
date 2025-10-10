@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { backendUrl, currency } from '../App.jsx'
+import { backendUrl, currency } from '../constants.js'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import { assets } from '../assets/assets.js'
@@ -34,10 +34,11 @@ const Orders = ({token}) => {
             }
         } catch (error) {
             console.log(error)
-            toast.error(response.data.message)
+            toast.error(error.message)
         }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
         fetchAllOrders();
     },[token])

@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 const Verify = () => {
 
     const { navigate,token, setCartItems, backendUrl } = useContext(ShopContext)
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
 
     const success = searchParams.get('success')
     const orderId = searchParams.get('orderId')
@@ -32,6 +32,7 @@ const Verify = () => {
         }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
         verifyPayment()
     }, [token])

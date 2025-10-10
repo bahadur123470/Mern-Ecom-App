@@ -1,10 +1,11 @@
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 // import { products } from "../assets/assets.js";    as it is removed after we fetch from backend api // that was only for testing purpose
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
+import { ShopContext } from "./ShopContext.js";
 
-export const ShopContext = createContext();
+export { ShopContext };
 
 const ShopContextProvider = (props) => {
 
@@ -60,7 +61,7 @@ const ShopContextProvider = (props) => {
                         totalCount += cartItems[items][item]
                     }
                 } catch (error) {
-                    
+                    console.log(error);
                 }
             }
         }
@@ -94,7 +95,7 @@ const ShopContextProvider = (props) => {
                         totalAmount += itemInfo.price * cartItems[items][item]
                     }
                 } catch (error) {
-                    
+                    console.log(error);
                 }
             }
         }
